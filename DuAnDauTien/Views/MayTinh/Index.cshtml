@@ -1,0 +1,28 @@
+﻿<h3> Tính toán đơn giản</h3>
+<form asp-action="TinhToan" method="post">
+    <div class="form-group">
+        <label> Nhập số thứ nhất</label>
+        <input name="so1" id="so1" class="form-control" />  
+    </div>
+    <div class="form-group">
+        <label> Nhập số thứ hai</label>
+        <input name="so2" id="so2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label> Phép tính</label>
+        <select name="pheptinh" id="pheptinh" class="form-control">
+            <option value="+">Cộng</option>
+            <option value="-">Trừ</option>
+            <option value="*">Nhân</option>
+            <option value="/">Chia</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Tính</button>
+    @if (ViewBag.KQ != null)
+    {
+        <div class="alert alert-info mt-2">
+            <h6>Kết Quả: @ViewBag.KQ</h6>
+        </div>
+    }
+</form>
